@@ -1,0 +1,10 @@
+.nav-items{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.nav-item{
+    margin: 8px;
+}
