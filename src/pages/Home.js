@@ -1,5 +1,5 @@
 import { Space, Button, Card, Typography, Skeleton, Switch, Avatar } from 'antd';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import 'antd/dist/antd.css';
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
 
@@ -9,7 +9,6 @@ function Home(props) {
     const [posts, setPosts] = useState([])
     const url = 'https://jsonplaceholder.typicode.com/posts'
     const [isLoading, setIsLoading] = useState(true)
-    const { Meta } = Card;
 
 
     const getPosts = () => {
@@ -19,14 +18,15 @@ function Home(props) {
         fetch(url, requestOptions)
             .then(response => response.json())
             .then(data => {
-                setTimeout(() => {
-                    setPosts(data)
-                    setIsLoading(false)
-                }, 1000)
-
+                setPosts(data)
+                setIsLoading(false)
 
             }).then()
     }
+
+    useEffect(() => {
+        getPosts()
+    }, [])
 
     const { Title } = Typography;
     return (
@@ -35,8 +35,6 @@ function Home(props) {
 
             <Space direction="vertical" >
                 <Button onClick={getPosts}>Test</Button>
-
-
                 {isLoading ?
                     <Card>
                         <Skeleton active loading={isLoading} />
