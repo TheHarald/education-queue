@@ -1,4 +1,4 @@
-import { Space, Button, Card, Typography, Skeleton, Switch, Avatar } from 'antd';
+import { Space, Button, Card, Typography, Skeleton, Switch, Avatar, Pagination } from 'antd';
 import React, { useEffect, useState } from 'react';
 import 'antd/dist/antd.css';
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
@@ -18,8 +18,10 @@ function Home(props) {
         fetch(url, requestOptions)
             .then(response => response.json())
             .then(data => {
-                setPosts(data)
-                setIsLoading(false)
+                setTimeout(() => {
+                    setPosts(data)
+                    setIsLoading(false)
+                }, 2000)
 
             }).then()
     }
@@ -35,8 +37,9 @@ function Home(props) {
 
             <Space direction="vertical" >
                 <Button onClick={getPosts}>Test</Button>
+
                 {isLoading ?
-                    <Card>
+                    <Card style={{ width: 700 }}>
                         <Skeleton active loading={isLoading} />
                     </Card>
                     :
@@ -49,6 +52,7 @@ function Home(props) {
                         </Card>
                     })
                 }
+
             </Space>
         </div>
     );

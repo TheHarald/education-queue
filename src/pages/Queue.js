@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Button, Card, Skeleton, Space, Table, Typography } from 'antd';
+import { Button, Card, Skeleton, Space, Table, Tag, Typography } from 'antd';
 import { useState } from 'react/cjs/react.development';
 
 function Queue(props) {
@@ -44,20 +44,31 @@ function Queue(props) {
             title: 'Статус',
             dataIndex: 'website',
             key: 'website',
+            render: website => {
+                return (
+                    <Tag color={'red'} >
+                        {website}
+                    </Tag>
+                )
+            }
         }
     ]
 
     return (
         <div>
             <Title>Очередь</Title>
-            {isLoading ? <Card>
-                <Skeleton active />
-            </Card> :
-                <Table columns={columns} dataSource={students} />
+            <Space direction='vertical'>
+                <Button size={'large'} type='primary' >Встать в очередь</Button>
+            </Space>
+            {
+                isLoading ? <Card>
+                    <Skeleton active />
+                </Card> :
+                    <Table columns={columns} dataSource={students} />
             }
 
 
-        </div>
+        </div >
     );
 }
 

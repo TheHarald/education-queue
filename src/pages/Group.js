@@ -28,7 +28,13 @@ function group(props) {
             name: 'Vlad',
             number: '324',
             status: 'good'
+        },
+        {
+            name: 'Vlad',
+            number: '324',
+            status: 'good'
         }
+
     ]
     return (
         <div>
