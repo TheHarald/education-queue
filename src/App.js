@@ -1,4 +1,4 @@
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Space } from 'antd';
 import { Link, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/header/Header';
@@ -15,6 +15,8 @@ import {
   ProfileOutlined,
   OrderedListOutlined
 } from "@ant-design/icons";
+import LogIn from './pages/LogIn';
+import Profile from './pages/Profile';
 
 const App = () => {
 
@@ -25,6 +27,12 @@ const App = () => {
       <Layout>
         <Header className='header' theme='light'>
           <div className="logo" />
+          <Space>
+            <Link to={'/profile'} >Name</Link >
+            <Link to={'/login'} >Exit</Link >
+          </Space>
+
+
 
         </Header>
         <Layout>
@@ -60,6 +68,8 @@ const App = () => {
                 <Route path='/group' element={<Group />} />
                 <Route path='/queue' element={<Queue />} />
                 <Route path='/create' element={<CreateQueue />} />
+                <Route path='/profile' element={<Profile />} />
+                <Route path='/login' element={<LogIn />} />
               </Routes>
 
             </Content>
