@@ -68,8 +68,12 @@ function LogIn(props) {
 
                 <Form.Item>
                     <Space>
-                        <Button type="primary" htmlType="submit" className="login-form-button">
-                            <Link to={'/'} >Войти</Link>
+                        <Button
+                            type="primary"
+                            htmlType="submit"
+                            className="login-form-button"
+                        >
+                            <a href={'/'} >Войти</a>
                         </Button>
                         Или <a href="">Зарегистрироваться</a>
                     </Space>
