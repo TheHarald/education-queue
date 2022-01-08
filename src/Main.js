@@ -15,7 +15,7 @@ import {
   ProfileOutlined,
   OrderedListOutlined
 } from "@ant-design/icons";
-import Profile from './pages/Profile';
+import Profile from './pages/Profile/Profile';
 
 const Main = () => {
 
