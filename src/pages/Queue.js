@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Button, Card, Skeleton, Space, Table, Tag, Typography } from 'antd';
+import { Avatar, Button, Card, Skeleton, Space, Table, Tag, Typography } from 'antd';
 import { useState } from 'react/cjs/react.development';
 
 function Queue(props) {
@@ -38,6 +38,18 @@ function Queue(props) {
             title: 'Имя',
             dataIndex: 'name',
             key: 'name',
+            render: (name) => {
+                return (
+                    <Space key={name}>
+
+                        <Avatar
+                            size={32}
+                            src={'https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg'} />
+                        <a>{name}</a>
+
+                    </Space>
+                )
+            }
         },
 
         {
@@ -46,7 +58,7 @@ function Queue(props) {
             key: 'website',
             render: website => {
                 return (
-                    <Tag color={'red'} >
+                    <Tag key={website} color={'red'} >
                         {website}
                     </Tag>
                 )

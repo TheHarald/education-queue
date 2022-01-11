@@ -16,8 +16,9 @@ import {
   OrderedListOutlined
 } from "@ant-design/icons";
 import Profile from './pages/Profile/Profile';
+import LogIn from './pages/LogIn';
 
-const Main = () => {
+const Main = (props) => {
 
   const { Header, Content, Sider } = Layout;
 
@@ -28,7 +29,7 @@ const Main = () => {
           <div className="logo" />
           <Space>
             <Link to={'/profile'} >Name</Link >
-            <a href={'/login'} >Exit</a >
+            <a href={'/login'} onClick={() => props.setIsLogged(false)} >Exit</a >
           </Space>
 
 
@@ -77,7 +78,7 @@ const Main = () => {
 
 
       </Layout>
-    </div>
+    </div >
 
   );
 }

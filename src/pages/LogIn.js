@@ -72,6 +72,7 @@ function LogIn(props) {
                             type="primary"
                             htmlType="submit"
                             className="login-form-button"
+                            onClick={() => props.setIsLogged(true)}
                         >
                             <a href={'/'} >Войти</a>
                         </Button>
