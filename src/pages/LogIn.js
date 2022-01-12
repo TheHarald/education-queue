@@ -25,7 +25,6 @@ function LogIn(props) {
                 initialValues={{
                     remember: true,
                 }}
-                onFinish={() => console.log(user)}
             >
 
                 <Form.Item
@@ -72,11 +71,11 @@ function LogIn(props) {
                             type="primary"
                             htmlType="submit"
                             className="login-form-button"
-                            onClick={() => props.setIsLogged(true)}
+                            onClick={() => console.log(user)}
                         >
-                            <a href={'/'} >Войти</a>
+                            <Link to={'/'} >Войти</Link>
                         </Button>
-                        Или <a href="">Зарегистрироваться</a>
+                        Или <Link to='/register'>Зарегестрироваться</Link>
                     </Space>
                 </Form.Item>
 

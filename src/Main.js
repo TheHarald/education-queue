@@ -1,8 +1,6 @@
 import { Layout, Menu, Space } from 'antd';
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes, Switch } from 'react-router-dom';
 import './App.css';
-import Header from './components/header/Header';
-import NavigationBar from './components/navigation/NavigationBar';
 import CreateQueue from './pages/CreateQueue';
 import Group from './pages/Group';
 import Home from './pages/Home';
@@ -16,7 +14,6 @@ import {
   OrderedListOutlined
 } from "@ant-design/icons";
 import Profile from './pages/Profile/Profile';
-import LogIn from './pages/LogIn';
 
 const Main = (props) => {
 
@@ -29,7 +26,7 @@ const Main = (props) => {
           <div className="logo" />
           <Space>
             <Link to={'/profile'} >Name</Link >
-            <a href={'/login'} onClick={() => props.setIsLogged(false)} >Exit</a >
+            <Link to={'/login'}  >Exit</Link >
           </Space>
 
 
@@ -69,7 +66,6 @@ const Main = (props) => {
                 <Route path='/queue' element={<Queue />} />
                 <Route path='/create' element={<CreateQueue />} />
                 <Route path='/profile' element={<Profile />} />
-
               </Routes>
 
             </Content>
